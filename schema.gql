@@ -1,0 +1,26 @@
+# @see https://spec.graphql.org/June2018/
+
+type Query {
+  customer(id: ID!): Customer!
+}
+
+type Customer {
+  id: ID!
+  names: [String!]!
+  accounts: [Account!]!
+}
+
+type Account {
+  id: ID!
+  customer: Customer!
+  sortCode: String!
+  accountNumber: String!
+  balance: String!
+  currency: CurrencyEnum!
+}
+
+enum CurrencyEnum {
+  EUR
+  GBP
+  USD
+}

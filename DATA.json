@@ -1,0 +1,46 @@
+{
+  "customers": [
+    {
+      "id": "1",
+      "names": ["John", "Smith"]
+    },
+    {
+      "id": "2",
+      "names": ["Jane", "Smith"]
+    }
+  ],
+  "accounts": [
+    {
+      "id": "1.1",
+      "customerId": "1",
+      "sortCode": "112233",
+      "accountNumber": "123451",
+      "balance": "123.45",
+      "currency": "GBP"
+    },
+    {
+      "id": "1.2",
+      "customerId": "1",
+      "sortCode": "112233",
+      "accountNumber": "123452",
+      "balance": "12345.67",
+      "currency": "EUR"
+    },
+    {
+      "id": "2.1",
+      "customerId": "2",
+      "sortCode": "112233",
+      "accountNumber": "123453",
+      "balance": "543.21",
+      "currency": "GBP"
+    },
+    {
+      "id": "2.2",
+      "customerId": "2",
+      "sortCode": "112233",
+      "accountNumber": "123454",
+      "balance": "7654321.00",
+      "currency": "USD"
+    }
+  ]
+}
