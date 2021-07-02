@@ -1,5 +1,5 @@
 const grpc = require('@grpc/grpc-js');
-const { loadAccountServiceDefn } = require('./grpcShared');
+const { loadAccountServiceDefn } = require('./grpcShared'); // TODO use generated static code
 const { rpcHandlers } = require('./service');
 
 const ip   = '127.0.0.1';

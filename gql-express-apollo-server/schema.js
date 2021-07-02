@@ -30,17 +30,17 @@ const resolvers = {
     customer: async (parent, args, ctx, info) => getCustomer(args.id),
   },
   Customer: {
-    id: parent => parent.id,
-    names: parent => parent.names,
+    id:       parent => parent.id,
+    names:    parent => parent.names,
     accounts: async (parent, args, ctx, info) => getAccounts(parent.id),
   },
   Account: {
-    id: parent => parent.id,
-    sortCode: parent => parent.sortCode,
+    id:            parent => parent.id,
+    sortCode:      parent => parent.sortCode,
     accountNumber: parent => parent.accountNumber,
-    balance: parent => parent.balance,
-    currency: parent => parent.currency,
-    customer: async (parent, args, ctx, info) => getCustomer(parent.customerId),
+    balance:       parent => parent.balance,
+    currency:      parent => parent.currency,
+    customer:      async (parent, args, ctx, info) => getCustomer(parent.customerId),
   },
 };
 

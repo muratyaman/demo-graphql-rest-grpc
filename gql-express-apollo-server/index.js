@@ -13,12 +13,13 @@ async function main() {
   // start GraphQL server
   await gqlServer.start();
 
-  gqlServer.applyMiddleware({ app: httpServer, graphqlPath: '/graphql' });
-
-  httpServer.use(logRequest);
+  httpServer.use(express.json()); // auto-decode JSON requests
+  httpServer.use(logRequest);     // log each request
 
   httpServer.get('/health', healthCheck);
   httpServer.get('/',       healthCheck);
+
+  gqlServer.applyMiddleware({ app: httpServer, graphqlPath: '/graphql' });
 
   // start HTTP server
   await new Promise(resolve => httpServer.listen({ port }, resolve));

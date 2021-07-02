@@ -5,18 +5,27 @@ Use https://sequencediagram.org/ to view sequence
 
 ```
 title Sample multi-tier API Architecture
+
+participant App
+participant GraphQL
+participant REST Customers
+participant gRPC Accounts
+
+participant DB1
+participant DB2
+
 App->GraphQL: send GraphQL command
 GraphQL-->REST Customers: get customer details
 GraphQL-->REST Customers: get accounts of customer
 REST Customers-->DB1: get customer details
-REST Customers<--DB1: customer details
+REST Customers<--DB1: return customer details
 REST Customers-->gRPC Accounts: getAccounts()
 gRPC Accounts-->DB2: get accounts of customer
-gRPC Accounts<--DB2: accounts of customer
-REST Customers<--gRPC Accounts: accounts
-GraphQL<--REST Customers: customer details
-GraphQL<--REST Customers: accounts of customer
-App<-GraphQL: send only data pieces asked
+gRPC Accounts<--DB2: return accounts of customer
+REST Customers<--gRPC Accounts: return accounts
+GraphQL<--REST Customers: return customer details
+GraphQL<--REST Customers: return accounts of customer
+App<-GraphQL: return only data asked
 ```
 
 `DATA.json` is acting like components: DB1 and DB2

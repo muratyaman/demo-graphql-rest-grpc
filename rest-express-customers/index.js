@@ -1,7 +1,7 @@
 const express  = require('express');
 const grpc     = require('@grpc/grpc-js');
 
-const { loadAccountServiceDefn } = require('./grpcShared');
+const { loadAccountServiceDefn } = require('./grpcShared');  // TODO use generated static code
 
 const port = 9002;
 
